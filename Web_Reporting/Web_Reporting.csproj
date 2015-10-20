@@ -1,0 +1,706 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A41C637F-A6C9-4571-87C2-275C1DFFF3DC}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Web_Reporting</RootNamespace>
+    <AssemblyName>Web_Reporting</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
+    <PublishDatabaseSettings>
+      <Objects>
+        <ObjectGroup Name="Web_Reporting-Deployment" Order="1" xmlns="">
+          <Destination Path="" />
+          <Object Type="DbFullSql">
+            <PreSource Path="Data Source=WMM0772MANUAP01%3bInitial Catalog=Web_Reporting%3bIntegrated Security=True%3bMax Pool Size=3" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Debug\AutoScripts\Web_Reporting-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+      </Objects>
+    </PublishDatabaseSettings>
+    <PrecompileBeforePublish>true</PrecompileBeforePublish>
+    <PublishDatabases>true</PublishDatabases>
+    <DeployEncryptKey>Encryption password is used only if any deployment setting is marked as secure</DeployEncryptKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
+    <ExcludeGeneratedDebugSymbol>false</ExcludeGeneratedDebugSymbol>
+    <PrecompileBeforePublish>true</PrecompileBeforePublish>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.7.1213, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.7.1213\lib\40\AjaxControlToolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AjaxMin, Version=4.97.4951.28478, Culture=neutral, PublicKeyToken=21ef50ce11b5d80f, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxMin.4.97.4951.28483\lib\net40\AjaxMin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Elmah">
+      <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.6.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.6\lib\Net40\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.2.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.OData.5.2.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration, Version=1.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.1.8.0.0\lib\net35-full\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=2.1.0.4, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAzure.Storage.2.1.0.4\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Spatial, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.2.0\lib\net40\System.Spatial.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\Admin.aspx" />
+    <Content Include="Admin\Active_Users.aspx" />
+    <Content Include="Admin\Page_Audit_Trail.aspx" />
+    <Content Include="Admin\Query_Audit_Trail.aspx" />
+    <Content Include="Admin\Site_Config.aspx" />
+    <Content Include="Admin\User_Access_Enq.aspx" />
+    <Content Include="App_Readme\Elmah.txt" />
+    <Content Include="Business\Business_Home.aspx" />
+    <Content Include="Business\Integration\Integration_Reports.aspx" />
+    <Content Include="Business\Integration\Deliver\LPN_Status_Enq.aspx" />
+    <Content Include="Business\Integration\Make\MORLSENDQ_Volumes.aspx" />
+    <Content Include="Business\Reporting\Non_Operational\Cattle_carcass_details.aspx" />
+    <Content Include="Business\Reporting\Operational\ARAMS_Session_Tag_Data.aspx" />
+    <Content Include="Business\Reporting\Operational\ARAMS_Data_Export.aspx" />
+    <Content Include="Business\Reporting\Operational\ARAMS_Reader_Detail.aspx" />
+    <Content Include="Business\Reporting\Non_Operational\NFA_Cattle.aspx" />
+    <Content Include="Business\Reporting\Non_Operational\Carcass_Weights.aspx" />
+    <Content Include="Business\Reporting\Non_Operational\Cattle_over_430KG_by_supplier.aspx" />
+    <Content Include="Business\Reporting\Operational\Bizerba_OCM_Numerators.aspx" />
+    <Content Include="Business\Reporting\Operational\Colne_RFID_Scan_Detail.aspx" />
+    <Content Include="Business\Reporting\Non_Operational\Non_Operational_Reports.aspx" />
+    <Content Include="Business\Reporting\Non_Operational\Pig_kill_type_report.aspx" />
+    <Content Include="Business\Reporting\Non_Operational\Supplier_Holding_Check.aspx" />
+    <Content Include="Business\Reporting\Non_Operational\Beef_Boning_Report.aspx" />
+    <Content Include="Business\Integration\Deliver\Biz_Unique_Numerator_Enq.aspx" />
+    <Content Include="Business\Integration\Source\Kill_Batches.aspx" />
+    <Content Include="Admin\User_Access_Admin.aspx" />
+    <Content Include="Business\Integration\Business_Summary.aspx" />
+    <Content Include="Business\Integration\Source\Bus_MORLKBATCH_trans.aspx" />
+    <Content Include="Business\Integration\Make\Bus_MORLSENDQ_Trans.aspx" />
+    <Content Include="Business\Reporting\Non_Operational\Cattle_breed_report.aspx" />
+    <Content Include="Business\Reporting\Operational\Colne_RFID_Scan_Rate.aspx" />
+    <Content Include="Business\Reporting\Non_Operational\Cattle_OTM_report.aspx" />
+    <Content Include="Business\Reporting\Non_Operational\Pig_probe_report.aspx" />
+    <Content Include="Business\Reporting\Non_Operational\Supplier_kill_report.aspx" />
+    <Content Include="Business\Reporting\Operational\Operational_Reports.aspx" />
+    <Content Include="Common\Error.aspx" />
+    <Content Include="Common\Help.aspx" />
+    <Content Include="Forward.aspx" />
+    <Content Include="Sandbox\Unsent_Transaction_History.aspx" />
+    <Content Include="Scripts\jquery-1.11.2.min.js" />
+    <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.1.js" />
+    <Content Include="Scripts\jquery-2.1.1.min.js" />
+    <Content Include="Scripts\nugetexample.js" />
+    <Content Include="Styles\Images\Arrow.png" />
+    <Content Include="Styles\Images\Back.png" />
+    <Content Include="Styles\Images\Business_icon.png" />
+    <Content Include="Styles\Images\Cog.png" />
+    <Content Include="Styles\Images\down_arrow.png" />
+    <Content Include="Styles\Images\Help_icon.png" />
+    <Content Include="Styles\Images\Help_white.png" />
+    <Content Include="Styles\Images\Home.png" />
+    <Content Include="Styles\Images\Integration_icon.png" />
+    <Content Include="Styles\Images\Livestock_icon.png" />
+    <Content Include="Styles\Images\Logo.png" />
+    <Content Include="Styles\Images\now_loading.gif" />
+    <Content Include="Styles\Images\now_loading_2.gif" />
+    <Content Include="Styles\Images\Refresh.png" />
+    <Content Include="Styles\Images\Hardware_icon.png" />
+    <Content Include="Styles\Images\required_green.png" />
+    <Content Include="Styles\Images\required_white.png" />
+    <Content Include="Styles\Images\Technical_icon.png" />
+    <Content Include="Styles\Images\up_arrow.png" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Technical\Integration\AP\MORLPAYCERTS_trans.aspx" />
+    <Content Include="Technical\Integration\Make\MORLSENDQ_Trans_Enquiry.aspx" />
+    <Content Include="Technical\Integration\Make\MORLSENDQ_Custom_SQL.aspx" />
+    <Content Include="Technical\Integration\Make\MORLSENDQ_itemreconciliation.aspx" />
+    <Content Include="Technical\Integration\Visual_Int_Dashboard.aspx" />
+    <Content Include="Technical\Integration\Detailed_Summary.aspx" />
+    <Content Include="Technical\Integration\Source\Tec_MORLKBATCH_trans.aspx" />
+    <Content Include="Business\Integration\Make\OPM_Batch_Status_Enquiry.aspx" />
+    <Content Include="Business\Integration\Make\OPM_Batch_Item_Enquiry.aspx" />
+    <Content Include="Technical\Integration\Make\MORLSENDQ_trans.aspx" />
+    <Content Include="Sandbox\Sandbox.aspx" />
+    <Content Include="Technical\Technical_Home.aspx" />
+    <Content Include="Technical\Integration\Make\Tec_MORLEBATCH_trans.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="Technical\Integration\AP\MORLSUPPLIERS_errors.aspx" />
+    <Content Include="Technical\Integration\Dashboard.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Technical\BAU\LPKBatch_Seq_Check.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Active_Users.aspx.cs">
+      <DependentUpon>Active_Users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Active_Users.aspx.designer.cs">
+      <DependentUpon>Active_Users.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Page_Audit_Trail.aspx.cs">
+      <DependentUpon>Page_Audit_Trail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Page_Audit_Trail.aspx.designer.cs">
+      <DependentUpon>Page_Audit_Trail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Query_Audit_Trail.aspx.cs">
+      <DependentUpon>Query_Audit_Trail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Query_Audit_Trail.aspx.designer.cs">
+      <DependentUpon>Query_Audit_Trail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Site_Config.aspx.cs">
+      <DependentUpon>Site_Config.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Site_Config.aspx.designer.cs">
+      <DependentUpon>Site_Config.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\User_Access_Enq.aspx.cs">
+      <DependentUpon>User_Access_Enq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\User_Access_Enq.aspx.designer.cs">
+      <DependentUpon>User_Access_Enq.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Business_Home.aspx.cs">
+      <DependentUpon>Business_Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\Business_Home.aspx.designer.cs">
+      <DependentUpon>Business_Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Integration\Integration_Reports.aspx.cs">
+      <DependentUpon>Integration_Reports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\Integration\Integration_Reports.aspx.designer.cs">
+      <DependentUpon>Integration_Reports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Integration\Deliver\LPN_Status_Enq.aspx.cs">
+      <DependentUpon>LPN_Status_Enq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\Integration\Deliver\LPN_Status_Enq.aspx.designer.cs">
+      <DependentUpon>LPN_Status_Enq.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Integration\Make\Bus_MORLSENDQ_Trans.aspx.designer.cs">
+      <DependentUpon>Bus_MORLSENDQ_Trans.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Integration\Make\MORLSENDQ_Volumes.aspx.cs">
+      <DependentUpon>MORLSENDQ_Volumes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\Integration\Make\MORLSENDQ_Volumes.aspx.designer.cs">
+      <DependentUpon>MORLSENDQ_Volumes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Reporting\Non_Operational\Cattle_carcass_details.aspx.cs">
+      <DependentUpon>Cattle_carcass_details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\Reporting\Non_Operational\Cattle_carcass_details.aspx.designer.cs">
+      <DependentUpon>Cattle_carcass_details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Reporting\Operational\ARAMS_Session_Tag_Data.aspx.cs">
+      <DependentUpon>ARAMS_Session_Tag_Data.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\Reporting\Operational\ARAMS_Session_Tag_Data.aspx.designer.cs">
+      <DependentUpon>ARAMS_Session_Tag_Data.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Reporting\Operational\ARAMS_Data_Export.aspx.cs">
+      <DependentUpon>ARAMS_Data_Export.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\Reporting\Operational\ARAMS_Data_Export.aspx.designer.cs">
+      <DependentUpon>ARAMS_Data_Export.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Reporting\Operational\ARAMS_Reader_Detail.aspx.cs">
+      <DependentUpon>ARAMS_Reader_Detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\Reporting\Operational\ARAMS_Reader_Detail.aspx.designer.cs">
+      <DependentUpon>ARAMS_Reader_Detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Reporting\Non_Operational\NFA_Cattle.aspx.cs">
+      <DependentUpon>NFA_Cattle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\Reporting\Non_Operational\NFA_Cattle.aspx.designer.cs">
+      <DependentUpon>NFA_Cattle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Reporting\Non_Operational\Carcass_Weights.aspx.cs">
+      <DependentUpon>Carcass_Weights.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\Reporting\Non_Operational\Carcass_Weights.aspx.designer.cs">
+      <DependentUpon>Carcass_Weights.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Reporting\Non_Operational\Cattle_over_430KG_by_supplier.aspx.cs">
+      <DependentUpon>Cattle_over_430KG_by_supplier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\Reporting\Non_Operational\Cattle_over_430KG_by_supplier.aspx.designer.cs">
+      <DependentUpon>Cattle_over_430KG_by_supplier.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Reporting\Operational\Bizerba_OCM_Numerators.aspx.cs">
+      <DependentUpon>Bizerba_OCM_Numerators.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\Reporting\Operational\Bizerba_OCM_Numerators.aspx.designer.cs">
+      <DependentUpon>Bizerba_OCM_Numerators.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Reporting\Operational\Colne_RFID_Scan_Detail.aspx.cs">
+      <DependentUpon>Colne_RFID_Scan_Detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\Reporting\Operational\Colne_RFID_Scan_Detail.aspx.designer.cs">
+      <DependentUpon>Colne_RFID_Scan_Detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Reporting\Non_Operational\Non_Operational_Reports.aspx.cs">
+      <DependentUpon>Non_Operational_Reports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\Reporting\Non_Operational\Non_Operational_Reports.aspx.designer.cs">
+      <DependentUpon>Non_Operational_Reports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Reporting\Non_Operational\Pig_kill_type_report.aspx.cs">
+      <DependentUpon>Pig_kill_type_report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\Reporting\Non_Operational\Pig_kill_type_report.aspx.designer.cs">
+      <DependentUpon>Pig_kill_type_report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Reporting\Non_Operational\Supplier_Holding_Check.aspx.cs">
+      <DependentUpon>Supplier_Holding_Check.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\Reporting\Non_Operational\Supplier_Holding_Check.aspx.designer.cs">
+      <DependentUpon>Supplier_Holding_Check.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Reporting\Non_Operational\Beef_Boning_Report.aspx.cs">
+      <DependentUpon>Beef_Boning_Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\Reporting\Non_Operational\Beef_Boning_Report.aspx.designer.cs">
+      <DependentUpon>Beef_Boning_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Integration\Deliver\Biz_Unique_Numerator_Enq.aspx.cs">
+      <DependentUpon>Biz_Unique_Numerator_Enq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\Integration\Deliver\Biz_Unique_Numerator_Enq.aspx.designer.cs">
+      <DependentUpon>Biz_Unique_Numerator_Enq.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Integration\Source\Kill_Batches.aspx.cs">
+      <DependentUpon>Kill_Batches.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\Integration\Source\Kill_Batches.aspx.designer.cs">
+      <DependentUpon>Kill_Batches.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\User_Access_Admin.aspx.cs">
+      <DependentUpon>User_Access_Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\User_Access_Admin.aspx.designer.cs">
+      <DependentUpon>User_Access_Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Integration\Business_Summary.aspx.cs">
+      <DependentUpon>Business_Summary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\Integration\Business_Summary.aspx.designer.cs">
+      <DependentUpon>Business_Summary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Integration\Source\Bus_MORLKBATCH_trans.aspx.cs">
+      <DependentUpon>Bus_MORLKBATCH_trans.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\Integration\Source\Bus_MORLKBATCH_trans.aspx.designer.cs">
+      <DependentUpon>Bus_MORLKBATCH_trans.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Integration\Make\Bus_MORLSENDQ_Trans.aspx.cs">
+      <DependentUpon>Bus_MORLSENDQ_Trans.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\Reporting\Non_Operational\Cattle_breed_report.aspx.cs">
+      <DependentUpon>Cattle_breed_report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\Reporting\Non_Operational\Cattle_breed_report.aspx.designer.cs">
+      <DependentUpon>Cattle_breed_report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Reporting\Operational\Colne_RFID_Scan_Rate.aspx.cs">
+      <DependentUpon>Colne_RFID_Scan_Rate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\Reporting\Operational\Colne_RFID_Scan_Rate.aspx.designer.cs">
+      <DependentUpon>Colne_RFID_Scan_Rate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Reporting\Non_Operational\Cattle_OTM_report.aspx.cs">
+      <DependentUpon>Cattle_OTM_report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\Reporting\Non_Operational\Cattle_OTM_report.aspx.designer.cs">
+      <DependentUpon>Cattle_OTM_report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Reporting\Non_Operational\Pig_probe_report.aspx.cs">
+      <DependentUpon>Pig_probe_report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\Reporting\Non_Operational\Pig_probe_report.aspx.designer.cs">
+      <DependentUpon>Pig_probe_report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Reporting\Non_Operational\Supplier_kill_report.aspx.cs">
+      <DependentUpon>Supplier_kill_report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\Reporting\Non_Operational\Supplier_kill_report.aspx.designer.cs">
+      <DependentUpon>Supplier_kill_report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Reporting\Operational\Operational_Reports.aspx.cs">
+      <DependentUpon>Operational_Reports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\Reporting\Operational\Operational_Reports.aspx.designer.cs">
+      <DependentUpon>Operational_Reports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\Help.aspx.cs">
+      <DependentUpon>Help.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forward.aspx.cs">
+      <DependentUpon>Forward.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forward.aspx.designer.cs">
+      <DependentUpon>Forward.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Sandbox\Unsent_Transaction_History.aspx.cs">
+      <DependentUpon>Unsent_Transaction_History.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sandbox\Unsent_Transaction_History.aspx.designer.cs">
+      <DependentUpon>Unsent_Transaction_History.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Technical\Integration\AP\MORLPAYCERTS_trans.aspx.cs">
+      <DependentUpon>MORLPAYCERTS_trans.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Technical\Integration\AP\MORLPAYCERTS_trans.aspx.designer.cs">
+      <DependentUpon>MORLPAYCERTS_trans.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Technical\Integration\Make\MORLSENDQ_Trans_Enquiry.aspx.cs">
+      <DependentUpon>MORLSENDQ_Trans_Enquiry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Technical\Integration\Make\MORLSENDQ_Trans_Enquiry.aspx.designer.cs">
+      <DependentUpon>MORLSENDQ_Trans_Enquiry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Technical\Integration\Make\MORLSENDQ_Custom_SQL.aspx.cs">
+      <DependentUpon>MORLSENDQ_Custom_SQL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Technical\Integration\Make\MORLSENDQ_Custom_SQL.aspx.designer.cs">
+      <DependentUpon>MORLSENDQ_Custom_SQL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Technical\Integration\Make\MORLSENDQ_itemreconciliation.aspx.cs">
+      <DependentUpon>MORLSENDQ_itemreconciliation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Technical\Integration\Make\MORLSENDQ_itemreconciliation.aspx.designer.cs">
+      <DependentUpon>MORLSENDQ_itemreconciliation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Technical\Integration\Visual_Int_Dashboard.aspx.cs">
+      <DependentUpon>Visual_Int_Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Technical\Integration\Visual_Int_Dashboard.aspx.designer.cs">
+      <DependentUpon>Visual_Int_Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Technical\Integration\Detailed_Summary.aspx.cs">
+      <DependentUpon>Detailed_Summary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Technical\Integration\Detailed_Summary.aspx.designer.cs">
+      <DependentUpon>Detailed_Summary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Technical\Integration\Source\Tec_MORLKBATCH_trans.aspx.cs">
+      <DependentUpon>Tec_MORLKBATCH_trans.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Technical\Integration\Source\Tec_MORLKBATCH_trans.aspx.designer.cs">
+      <DependentUpon>Tec_MORLKBATCH_trans.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Integration\Make\OPM_Batch_Status_Enquiry.aspx.cs">
+      <DependentUpon>OPM_Batch_Status_Enquiry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\Integration\Make\OPM_Batch_Status_Enquiry.aspx.designer.cs">
+      <DependentUpon>OPM_Batch_Status_Enquiry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Integration\Make\OPM_Batch_Item_Enquiry.aspx.cs">
+      <DependentUpon>OPM_Batch_Item_Enquiry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\Integration\Make\OPM_Batch_Item_Enquiry.aspx.designer.cs">
+      <DependentUpon>OPM_Batch_Item_Enquiry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Technical\Integration\Make\MORLSENDQ_trans.aspx.cs">
+      <DependentUpon>MORLSENDQ_trans.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Technical\Integration\Make\MORLSENDQ_trans.aspx.designer.cs">
+      <DependentUpon>MORLSENDQ_trans.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sandbox\Sandbox.aspx.cs">
+      <DependentUpon>Sandbox.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sandbox\Sandbox.aspx.designer.cs">
+      <DependentUpon>Sandbox.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Technical\Technical_Home.aspx.cs">
+      <DependentUpon>Technical_Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Technical\Technical_Home.aspx.designer.cs">
+      <DependentUpon>Technical_Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Technical\Integration\Make\Tec_MORLEBATCH_trans.aspx.cs">
+      <DependentUpon>Tec_MORLEBATCH_trans.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Technical\Integration\Make\Tec_MORLEBATCH_trans.aspx.designer.cs">
+      <DependentUpon>Tec_MORLEBATCH_trans.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="Technical\Integration\AP\MORLSUPPLIERS_errors.aspx.cs">
+      <DependentUpon>MORLSUPPLIERS_errors.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Technical\Integration\AP\MORLSUPPLIERS_errors.aspx.designer.cs">
+      <DependentUpon>MORLSUPPLIERS_errors.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Technical\Integration\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Technical\Integration\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Technical\BAU\LPKBatch_Seq_Check.aspx.cs">
+      <DependentUpon>LPKBatch_Seq_Check.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Technical\BAU\LPKBatch_Seq_Check.aspx.designer.cs">
+      <DependentUpon>LPKBatch_Seq_Check.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Business\Reporting\Supplier_Rankings\" />
+    <Folder Include="Templates\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
+    <None Include="Properties\PublishProfiles\MONT949IDV705.pubxml" />
+    <None Include="Properties\PublishProfiles\Web_Reporting %28WMM0772MANUAP01%29.pubxml" />
+    <None Include="Properties\PublishProfiles\Web_Reporting_Test %28WMM0772MANUAP01%29.pubxml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Styles\Font\morrisonsfreshbeta1-regular-webfont.eot" />
+    <Content Include="Styles\Font\morrisonsfreshbeta1-regular-webfont.ttf" />
+    <Content Include="Styles\Font\morrisonsfreshbeta1-regular-webfont.woff" />
+    <Content Include="Styles\Font\archer-medium-pro-webfont.eot" />
+    <Content Include="Styles\Font\archer-medium-pro-webfont.ttf" />
+    <Content Include="Styles\Font\archer-medium-pro-webfont.woff" />
+    <Content Include="Styles\Font\archer-semibold-pro-webfont.eot" />
+    <Content Include="Styles\Font\archer-semibold-pro-webfont.ttf" />
+    <Content Include="Styles\Font\archer-semibold-pro-webfont.woff" />
+    <Content Include="Scripts\jquery-2.1.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3048</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>True</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
