@@ -3,7 +3,7 @@
 
 ### What is this repository for? ###
 
-* Woodheads Support is a web tool used at the three Woodheads Bros Ltd sites to provide features not available within Niche or EBS to the site personnel.
+* ASP.NET reporting tool to provide reporting non data held in ODBC connected databases
 
 
 ### Features ###
