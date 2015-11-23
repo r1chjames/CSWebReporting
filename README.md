@@ -3,7 +3,7 @@
 
 ### What is this repository for? ###
 
-* ASP.NET reporting tool to provide reporting non data held in ODBC connected databases
+* ASP.NET reporting tool to provide reporting on data held in ODBC connected databases
 
 
 ### Features ###
