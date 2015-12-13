@@ -27,7 +27,7 @@ public partial class Tec_MORLKBATCH_trans {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::AjaxControlToolkit.ToolkitScriptManager ToolkitScriptManager1;
+    protected global::System.Web.UI.ScriptManager ScriptManager;
     
     /// <summary>
     /// LinkButtonShow control.

@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
@@ -21,7 +17,7 @@ using System.Diagnostics;
         protected void btnDownload_Click(object sender, EventArgs e)
         {
 
-            SqlConnection conn = new SqlConnection("Data Source=WMM0772MANUAP01;Initial Catalog=Web_Reporting;Integrated Security=True; max pool size=3");
+            SqlConnection conn = new SqlConnection("Data Source=WS-ES12R2;Initial Catalog=Web_Reporting;Integrated Security=True; max pool size=3");
 
             SqlCommand cmd = new SqlCommand();
             SqlDataAdapter ad;
@@ -86,7 +82,7 @@ using System.Diagnostics;
         protected void btnReconcileCToday_Click(object sender, EventArgs e)
         {
 
-            SqlConnection conn = new SqlConnection("Data Source=WMM0772MANUAP01;Initial Catalog=Web_Reporting;Integrated Security=True; max pool size=3");
+            SqlConnection conn = new SqlConnection("Data Source=WS-ES12R2;Initial Catalog=Web_Reporting;Integrated Security=True; max pool size=3");
 
             SqlCommand cmd = new SqlCommand();
             SqlDataAdapter ad;
@@ -127,7 +123,7 @@ using System.Diagnostics;
         protected void btnReconcileCYday_Click(object sender, EventArgs e)
         {
 
-            SqlConnection conn = new SqlConnection("Data Source=WMM0772MANUAP01;Initial Catalog=Web_Reporting;Integrated Security=True; max pool size=3");
+            SqlConnection conn = new SqlConnection("Data Source=WS-ES12R2;Initial Catalog=Web_Reporting;Integrated Security=True; max pool size=3");
 
             SqlCommand cmd = new SqlCommand();
             SqlDataAdapter ad;
@@ -168,7 +164,7 @@ using System.Diagnostics;
         protected void btnReconcileSToday_Click(object sender, EventArgs e)
         {
 
-            SqlConnection conn = new SqlConnection("Data Source=WMM0772MANUAP01;Initial Catalog=Web_Reporting;Integrated Security=True; max pool size=3");
+            SqlConnection conn = new SqlConnection("Data Source=WS-ES12R2;Initial Catalog=Web_Reporting;Integrated Security=True; max pool size=3");
 
             SqlCommand cmd = new SqlCommand();
             SqlDataAdapter ad;
@@ -209,7 +205,7 @@ using System.Diagnostics;
         protected void btnReconcileSYday_Click(object sender, EventArgs e)
         {
 
-            SqlConnection conn = new SqlConnection("Data Source=WMM0772MANUAP01;Initial Catalog=Web_Reporting;Integrated Security=True; max pool size=3");
+            SqlConnection conn = new SqlConnection("Data Source=WS-ES12R2;Initial Catalog=Web_Reporting;Integrated Security=True; max pool size=3");
 
             SqlCommand cmd = new SqlCommand();
             SqlDataAdapter ad;
@@ -250,7 +246,7 @@ using System.Diagnostics;
         protected void btnReconcileTToday_Click(object sender, EventArgs e)
         {
 
-            SqlConnection conn = new SqlConnection("Data Source=WMM0772MANUAP01;Initial Catalog=Web_Reporting;Integrated Security=True; max pool size=3");
+            SqlConnection conn = new SqlConnection("Data Source=WS-ES12R2;Initial Catalog=Web_Reporting;Integrated Security=True; max pool size=3");
 
             SqlCommand cmd = new SqlCommand();
             SqlDataAdapter ad;
@@ -291,7 +287,7 @@ using System.Diagnostics;
         protected void btnReconcileTYday_Click(object sender, EventArgs e)
         {
 
-            SqlConnection conn = new SqlConnection("Data Source=WMM0772MANUAP01;Initial Catalog=Web_Reporting;Integrated Security=True; max pool size=3");
+            SqlConnection conn = new SqlConnection("Data Source=WS-ES12R2;Initial Catalog=Web_Reporting;Integrated Security=True; max pool size=3");
 
             SqlCommand cmd = new SqlCommand();
             SqlDataAdapter ad;
@@ -334,7 +330,7 @@ using System.Diagnostics;
             DataSet ds = new DataSet();
             string lcvar_transid;
 
-            using (SqlConnection con = new SqlConnection("SERVER=WMM0772MANUAP01;Trusted_Connection=Yes;DATABASE=Web_Reporting"))
+            using (SqlConnection con = new SqlConnection("SERVER=WS-ES12R2;Trusted_Connection=Yes;DATABASE=Web_Reporting"))
             {
                 using (SqlCommand cmd = new SqlCommand())
                 {

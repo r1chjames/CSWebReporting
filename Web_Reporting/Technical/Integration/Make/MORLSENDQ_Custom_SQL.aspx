@@ -6,8 +6,8 @@
 
 <body>
     <form id="form1" runat="server" defaultbutton="btnSubmit" defaultfocus="txtFromDate">
-    <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
-    </asp:ToolkitScriptManager>
+    <asp:ScriptManager ID="ScriptManager" runat="server">
+    </asp:ScriptManager>
 
         <h1>Morlsendq SQL Generator</h1>
         

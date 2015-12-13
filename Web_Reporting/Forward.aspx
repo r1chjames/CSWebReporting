@@ -6,7 +6,7 @@
 </script>
     <html xmlns="http://www.w3.org/1999/xhtml">
         <head>
-            <meta http-equiv="refresh" content="0; url=http://wmm0772manuap01/Web_Reporting/" />
+            <meta http-equiv="refresh" content="0; url=http://WS-ES12R2/Web_Reporting/" />
         </head>
 <body>
 

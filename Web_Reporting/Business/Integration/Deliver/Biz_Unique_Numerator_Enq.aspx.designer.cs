@@ -21,13 +21,13 @@ public partial class Biz_Unique_Numerator_Enq {
     protected global::System.Web.UI.HtmlControls.HtmlForm form1;
     
     /// <summary>
-    /// ToolkitScriptManager1 control.
+    /// ScriptManager control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::AjaxControlToolkit.ToolkitScriptManager ToolkitScriptManager1;
+    protected global::System.Web.UI.ScriptManager ScriptManager;
     
     /// <summary>
     /// UpdatePanel1 control.

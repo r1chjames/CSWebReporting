@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Net;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
@@ -25,7 +22,7 @@ namespace Web_Reporting
             string connectionString = null;
             SqlConnection connection;
             SqlCommand command = new SqlCommand();
-            connectionString = "Data Source=WMM0772MANUAP01;Initial Catalog=Web_Reporting;Integrated Security=True";
+            connectionString = "Data Source=WS-ES12R2;Initial Catalog=Web_Reporting;Integrated Security=True";
             connection = new SqlConnection(connectionString);
             command.Connection = connection;
             command.CommandType = CommandType.StoredProcedure;
@@ -75,7 +72,7 @@ namespace Web_Reporting
             SqlConnection connection;
             SqlCommand command = new SqlCommand();
             DataSet ds = new DataSet();
-            connectionString = "Data Source=WMM0772MANUAP01;Initial Catalog=Web_Reporting;Integrated Security=True";
+            connectionString = "Data Source=WS-ES12R2;Initial Catalog=Web_Reporting;Integrated Security=True";
             connection = new SqlConnection(connectionString);
             command.CommandText = "select data from site_config where application = 'Web_Reporting' and area = 'general' and item = 'announcement_banner'";
             command.CommandType = CommandType.Text;

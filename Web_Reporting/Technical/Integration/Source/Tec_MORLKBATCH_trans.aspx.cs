@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
@@ -26,7 +23,7 @@ public partial class Tec_MORLKBATCH_trans : System.Web.UI.Page
     protected void btnDownload_Click(object sender, EventArgs e)
     {
 
-        SqlConnection conn = new SqlConnection("Data Source=WMM0772MANUAP01;Initial Catalog=Web_Reporting;Integrated Security=True; max pool size=3");
+        SqlConnection conn = new SqlConnection("Data Source=WS-ES12R2;Initial Catalog=Web_Reporting;Integrated Security=True; max pool size=3");
 
         SqlCommand cmd = new SqlCommand();
         SqlDataAdapter ad;
@@ -80,7 +77,7 @@ public partial class Tec_MORLKBATCH_trans : System.Web.UI.Page
     {
         DataSet ds = new DataSet();
 
-        using (SqlConnection con = new SqlConnection("SERVER=WMM0772MANUAP01;Trusted_Connection=Yes;DATABASE=Web_Reporting"))
+        using (SqlConnection con = new SqlConnection("SERVER=WS-ES12R2;Trusted_Connection=Yes;DATABASE=Web_Reporting"))
         {
             using (SqlCommand cmd = new SqlCommand())
             {

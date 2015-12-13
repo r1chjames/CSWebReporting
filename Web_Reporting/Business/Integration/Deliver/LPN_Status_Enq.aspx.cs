@@ -1,15 +1,7 @@
 ﻿using System;
-using System.Collections;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Web.UI.HtmlControls;
-using System.Web.UI.WebControls.WebParts;
 using System.Data;
 using System.Data.SqlClient;
-using System.Configuration;
-using System.Web.Security;
 
     public partial class LPN_Status_Enq : System.Web.UI.Page
     {
@@ -21,7 +13,7 @@ using System.Web.Security;
         {
         DataSet ds = new DataSet();
 
-        using (SqlConnection con = new SqlConnection("SERVER=WMM0772MANUAP01;Trusted_Connection=Yes;DATABASE=Web_Reporting"))
+        using (SqlConnection con = new SqlConnection("SERVER=WS-ES12R2;Trusted_Connection=Yes;DATABASE=Web_Reporting"))
         {
             using (SqlCommand cmd = new SqlCommand())
             {

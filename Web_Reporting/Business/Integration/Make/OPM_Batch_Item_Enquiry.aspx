@@ -6,8 +6,8 @@
 
 <body>
     <form id="form1" runat="server" defaultbutton="btnSubmit" defaultfocus="txtItemNum">
-    <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
-    </asp:ToolkitScriptManager>
+    <asp:ScriptManager ID="ScriptManager" runat="server">
+    </asp:ScriptManager>
 
     
          <h1>OPM Batch Item Enquiry</h1>
